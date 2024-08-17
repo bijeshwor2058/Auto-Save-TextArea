@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Save TextArea</title>
+</head>
+<style>
+  body {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: blanchedalmond;
+    align-items: center;
+  }
+
+  .container{
+    width: 800px;
+    /* background-color: rgb(239, 255, 169); */
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px rgb(224, 162, 162);
+
+  }
+
+  h2{
+    text-align: center;
+    font-weight: 700;
+    font-size: 35px;
+  }
+
+  .text-field{
+    padding: 2%;
+  }
+
+  textarea{
+    /* position: absolute; */
+    border-radius: 12px;
+    width: 100%;
+    padding: 5px 2px;
+    font-size: 16px;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h2>Auto Save TeaxtArea</h2>
+    <div class="text-field">
+      <textarea name="text" id="text" cols="60" rows="20"></textarea>
+    </div>
+  </div>
+  <script>
+    const textArea = document.getElementById('text');
+    textArea.addEventListener('input', () => {
+      localStorage.setItem('text', textArea.value);
+    });
+  </script>
+</body>
+</html>
